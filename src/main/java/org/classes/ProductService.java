@@ -1,11 +1,27 @@
 package org.classes;
 
-import org.interfaces.ProductFilter;
+import org.interfaces.Filter;
 
-public class ProductService<T>{
-	private T filter;
-    public static int countByFilter(LotOfProducts lot) {
-		return 0;
-        
+public class ProductService{
+
+    public static int countByFilter(LotOfProducts lot, Filter filter) {
+    	int count = 0;
+    	Object buffer = new Object();
+    	for(int i = 0; i < lot.getLengthOfArray(); i++) {
+    		buffer = lot.getElement(i);
+    		if(buffer instanceof PackedPieceProduct) {
+    			if (filter.apply(((PackedPieceProduct) buffer).getTitle())) {
+    				count++;
+    			}
+    		} else {
+    			if(buffer instanceof PackedWeightProduct) {
+        			if (filter.apply(((PackedWeightProduct) buffer).getTitle())) {
+        				count++;
+        			}
+    			}
+    		}	
+    	}
+		return count;   
+		
     }
 }

@@ -58,6 +58,10 @@ public class LotOfProducts implements BoxOfPackedProducts {
         }
         return resultMass;
 	}
+	
+	public int getLengthOfArray() {
+		return boxOfPckProd.length;
+	}
 
 	@Override
 	public int hashCode() {

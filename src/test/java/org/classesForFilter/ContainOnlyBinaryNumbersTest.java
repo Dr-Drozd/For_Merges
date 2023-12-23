@@ -8,7 +8,7 @@ public class ContainOnlyBinaryNumbersTest {
 
 	@Test
 	public void differenceStringsTest() {
-		ContainOnlyBinaryNumbers bin = new ContainOnlyBinaryNumbers();
+		ContainOnlyBinaryNumbersFilter bin = new ContainOnlyBinaryNumbersFilter();
 		String binary = new String("010110");
 		String nonBinary = new String("072d0");
 		
@@ -18,7 +18,7 @@ public class ContainOnlyBinaryNumbersTest {
 	
 	@Test
 	public void binaryStringsWithSpacesTest() {
-		ContainOnlyBinaryNumbers bin = new ContainOnlyBinaryNumbers();
+		ContainOnlyBinaryNumbersFilter bin = new ContainOnlyBinaryNumbersFilter();
 		String binary = new String(" 010 110  ");
 		
 		assertTrue(bin.apply(binary));
@@ -26,7 +26,7 @@ public class ContainOnlyBinaryNumbersTest {
 	
 	@Test
 	public void voidStringTest() {
-		ContainOnlyBinaryNumbers bin = new ContainOnlyBinaryNumbers();
+		ContainOnlyBinaryNumbersFilter bin = new ContainOnlyBinaryNumbersFilter();
 		String binary = new String("");
 		
 		assertFalse(bin.apply(binary));
